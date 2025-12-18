@@ -1,128 +1,94 @@
-# EtherAuthority-Internship
+# 🌐 EtherAuthority Internship: Phase 01
 
-Repository containing tasks, resources, and everything related to Ether Authority.
+### _Mastering the Foundations: Web3, React, and AI_
 
----
-
-# Internship Project — Week 1
-
-**Course / Program:** Web3 & Blockchain · React.js · Node.js · AI-Tools  
-**Repository:** <https://github.com/aditya-an1l/EtherAuthority-Internship>
+> **Reporting Period:** `15 Dec – 19 Dec 2025` > **Program:** Web3 & Blockchain · React.js · Node.js · AI-Tools
 
 ---
 
-## Quick links
+## 🎓 Learning Modules
 
-- **Contract code (contracts folder)**: <https://github.com/aditya-an1l/EtherAuthority-Internship/tree/main/contracts>
-- **React frontend (frontend folder)**: <https://github.com/aditya-an1l/EtherAuthority-Internship/tree/main/frontend>
-- **AI concept documentation**: <https://github.com/aditya-an1l/EtherAuthority-Internship/blob/main/AI_CONCEPTS.md>
+### 1. Web3 & Blockchain
 
----
+- **Fundamentals:** Ethereum basics, Gas, Transactions, and Wallets.
+- **Solidity:** Syntax, state variables, visibility, and modifiers.
+- **Environments:** Configuration of Hardhat and Ganache/Anvil.
 
-## Project Summary
+### 2. React.js Basics
 
-This repository contains the Week 1 deliverables for the internship covering:
+- **Core Concepts:** Components, Props, State management (useState).
+- **Hooks & Logic:** Handling user input, list rendering, and API fetching.
 
-- Blockchain fundamentals & Ethereum basics
-- Solidity smart contract examples and deployment scripts (Hardhat)
-- React.js demo apps (Counter, Input Form, Todo, API Fetch)
-- A Web3 service (`src/services/contract.js`) and `TaskManager` UI component that interacts with the `InternshipTaskStatus` contract
-- `AI_CONCEPTS.md` — concise documentation of AI fundamentals and use-cases
+### 3. AI Fundamentals
 
----
-
-## Weekly Report
-
-**Program / Course Name:**
-
-- Web3 & Blockchain
-- React.js
-- Node.js
-- AI-Tools
-
-**Week Number:** Week 1
-
-**Reporting Period:** `15 Dec – 19 Dec 2025`
-
-**Learning Topics Covered:**
-
-- Blockchain fundamentals & Ethereum basics
-- Solidity syntax and smart contract deployment (Hardhat & Remix)
-- React.js fundamentals (components, props, state)
-- AI fundamentals and real-world use cases
-- Set up Hardhat, Foundry (optional), Ganache/Anvil
-
-**Tasks I Completed This Week?**
-
-- Project scaffold and Hardhat project created
-- Wrote example Solidity contracts:
-  - `HelloWorld.sol`, `Counter.sol`, `SimpleStorage.sol`, `OwnablePattern.sol`, `EtherTransfer.sol`, `AccountOwnership.sol`, `StudentRegistration.sol`, `SimpleVoting.sol`, `InternshipTaskStatus.sol`
-- Created `scripts/deployAll.js` for Hardhat deployment
-- Built React frontend (Vite) with components:
-  - `Counter`, `InputForm`, enhanced `TodoList`, `FetchExample`, `Card`, `TaskManager`
-- Implemented `src/services/contract.js` to connect React <-> Ethereum (MetaMask + ethers v6)
-- Wrote `AI_CONCEPTS.md` documentation
-
-**Work Output / Deliverables:**
-
-- Solidity contract source files — `contracts/` folder
-- Hardhat scripts (`scripts/`) and `hardhat.config.js`
-- React frontend — `frontend/` folder (Vite + React components)
-- `AI_CONCEPTS.md` file
-
-**GitHub Repository Link:** <https://github.com/aditya-an1l/EtherAuthority-Internship>
-
-<!-- **Deployed URL / Demo Link (if applicable):**   -->
-<!-- - Sepolia contract addresses (paste after deploy):   -->
-<!--   - `InternshipTaskStatus: 0x...`   -->
-<!--   - `HelloWorld: 0x...`   -->
-<!--   - (Add other addresses here) -->
-<!-- - Etherscan links example: `https://sepolia.etherscan.io/address/0xYourContractAddress` -->
-
-**Self-Rating for This Week:** 4 / 5 (adjust as you prefer)
-
-**Time Spent on Tasks (Approx.):** 10–15 hours
-
-**Challenges / Issues Faced:**
-
-- Setting up Alchemy/Infura & adding keys to `.env` (private key handling)
-- Getting Sepolia test ETH (finding active faucets)
-- MetaMask network configuration / switching to Sepolia
-- Mapping enum status between Solidity (uint8) and React UI
-
-**How Did I Tried to Solve Them?**
-
-- Used `.env` (never commit) and Hardhat network config for deployments
-- Followed Remix for simple one-off deployments to understand the flow
-- Checked MetaMask docs and used Chainlist/Alchemy docs for RPC endpoints
-- Implemented `Status` enum mapping in `contract.js` / UI (0 = NotStarted, 1 = InProgress, 2 = Done)
-
-**Key Learnings This Week:**
-
-- How Hardhat compiles, deploys, and how to wire deploy scripts to an RPC provider (Alchemy)
-- The basics of writing Solidity contracts and using OpenZeppelin for common patterns (Ownable)
-- React component composition and state handling for CRUD features (Todo app)
-- Connecting React to Ethereum using MetaMask + `ethers` (signer, provider, contract instance)
-- Importance of secure key management and not committing secrets
+- **Theoretical Base:** Core concepts and real-world industrial use cases.
+- **Documentation:** Created [AI_CONCEPTS.md](https://www.google.com/search?q=./WEEK-1/AI_CONCEPTS.md).
 
 ---
 
-## How to run locally (development)
+## 🛠 Tasks & Work Output
 
-### Prerequisites
+### 📜 Smart Contracts (Deployed on Sepolia)
 
-- Node.js (LTS) + npm or yarn
-- MetaMask installed in your browser (for frontend interaction)
-- An Alchemy or Infura API key if you want to deploy to Sepolia
-- Sepolia test ETH (from a faucet) if deploying to Sepolia
+| Contract Name              | Description                                    | Status      |
+| -------------------------- | ---------------------------------------------- | ----------- |
+| `HelloWorld.sol`           | Basic string storage                           | ✅ Deployed |
+| `Counter.sol`              | Integer increment/decrement                    | ✅ Deployed |
+| `SimpleStorage.sol`        | Global state management                        | ✅ Deployed |
+| `OwnablePattern.sol`       | Access control & modifiers                     | ✅ Deployed |
+| `EtherTransfer.sol`        | Managing value transfers                       | ✅ Deployed |
+| `InternshipTaskStatus.sol` | **Core Project:** Store & update task progress | ✅ Deployed |
 
-### 1) Install dependencies
+### ⚛️ React Applications
 
-```sh
-# project root
+- **Counter App:** State management demo.
+- **Input Form App:** Handling controlled components.
+- **Todo List App:** CRUD operations in local state.
+- **API Fetch Example:** Integration with external data.
+- **Component Reuse:** Demonstrating modular UI architecture.
+
+---
+
+## 🔗 Deliverables
+
+- **GitHub Repository:** [aditya-an1l/EtherAuthority-Internship](https://github.com/aditya-an1l/EtherAuthority-Internship/tree/main/WEEK-1)
+<!-- * **Sepolia Contract Address:** `0xYourContractAddressHere` -->
+- **AI Documentation:** [View AI_CONCEPTS.md](https://www.google.com/search?q=./WEEK-1/AI_CONCEPTS.md)
+
+---
+
+## 🧠 Challenges & Key Learnings
+
+### 🚩 Challenges Faced
+
+- **Sepolia Gas:** Sourcing reliable faucets for test ETH.
+- **Environment Security:** Managing `.env` variables for private keys to avoid repo exposure.
+- **Provider Logic:** Connecting Vite-React to the `ethers.js` provider for the first time.
+
+### 💡 How I Solved Them
+
+- Utilized **Alchemy/Infura** RPCs and community-verified faucets.
+- Implemented `dotenv` and added it to `.gitignore`.
+- Mapped Solidity `enums` (0, 1, 2) to human-readable strings in the React UI.
+
+### ⭐ Key Takeaway
+
+> "Blockchain isn't just about code; it's about the bridge between immutable logic (Solidity) and interactive interfaces (React). Mastering the provider-signer pattern is the key to Web3 UX."
+
+---
+
+## ⚙️ Local Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/aditya-an1l/EtherAuthority-Internship.git
+
+# Install Smart Contract dependencies
 npm install
 
-# frontend
-cd frontend
+# Run Frontend
+cd WEEK-1/frontend
 npm install
+npm run dev
+
 ```
