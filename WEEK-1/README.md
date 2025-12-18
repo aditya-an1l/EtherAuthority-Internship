@@ -53,7 +53,7 @@
 
 - **GitHub Repository:** [aditya-an1l/EtherAuthority-Internship](https://github.com/aditya-an1l/EtherAuthority-Internship/tree/main/WEEK-1)
 <!-- * **Sepolia Contract Address:** `0xYourContractAddressHere` -->
-- **AI Documentation:** [View AI_CONCEPTS.md](https://www.google.com/search?q=./WEEK-1/AI_CONCEPTS.md)
+- **AI Documentation:** [View AI_CONCEPTS.md](https://github.com/aditya-an1l/EtherAuthority-Internship/blob/main/WEEK-1/AI_CONCEPTS.md)
 
 ---
 
