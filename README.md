@@ -1,4 +1,4 @@
-# 🌐 EtherAuthority Internship: Phase 01
+# 🌐 EtherAuthority Internship: Week 1
 
 ### _Mastering the Foundations: Web3, React, and AI_
 
