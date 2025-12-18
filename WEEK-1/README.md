@@ -7,9 +7,9 @@
 
 ## Quick links
 
-- **Contract code (contracts folder)**: `https://github.com/aditya-an1l/EtherAuthority-Internship/tree/main/contracts`
-- **React frontend (frontend folder)**: `https://github.com/aditya-an1l/EtherAuthority-Internship/tree/main/frontend`
-- **AI concept documentation**: `https://github.com/aditya-an1l/EtherAuthority-Internship/blob/main/AI_CONCEPTS.md`
+- **Contract code (contracts folder)**: <https://github.com/aditya-an1l/EtherAuthority-Internship/tree/main/contracts>
+- **React frontend (frontend folder)**: <https://github.com/aditya-an1l/EtherAuthority-Internship/tree/main/frontend>
+- **AI concept documentation**: <https://github.com/aditya-an1l/EtherAuthority-Internship/blob/main/AI_CONCEPTS.md>
 
 ---
 
