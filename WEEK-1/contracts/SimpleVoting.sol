@@ -1,30 +1,37 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+// by aditya-an1l
+
+pragma solidity ^0.8.17;
 
 contract SimpleVoting {
-    struct Proposal { string name; uint voteCount; }
-    mapping(uint => Proposal) public proposals;
-    uint public proposalCount;
-    mapping(address => bool) public voted;
-
-    event ProposalAdded(uint indexed id, string name);
-    event Voted(address indexed voter, uint indexed proposalId);
-
-    function addProposal(string calldata name) external {
-        proposals[proposalCount] = Proposal(name, 0);
-        emit ProposalAdded(proposalCount, name);
-        proposalCount++;
+    struct Candidate {
+        string name;
+        uint256 voteCount;
     }
 
-    function vote(uint proposalId) external {
-        require(!voted[msg.sender], "Already voted");
-        require(proposalId < proposalCount, "Invalid proposal");
-        proposals[proposalId].voteCount += 1;
-        voted[msg.sender] = true;
-        emit Voted(msg.sender, proposalId);
+    mapping(uint256 => Candidate) public candidates;
+    uint256 public candidateCount;
+    mapping(address => bool) public hasVoted;
+
+    event CandidateAdded(uint256 id, string name);
+    event Voted(address voter, uint256 candidateId);
+
+    function addCandidate(string calldata _name) external {
+        candidates[candidateCount] = Candidate({name: _name, voteCount: 0});
+        emit CandidateAdded(candidateCount, _name);
+        candidateCount++;
     }
 
-    function getVotes(uint proposalId) external view returns (uint) {
-        return proposals[proposalId].voteCount;
+    function vote(uint256 _candidateId) external {
+        require(!hasVoted[msg.sender], "Already voted");
+        require(_candidateId < candidateCount, "Invalid candidate");
+        candidates[_candidateId].voteCount += 1;
+        hasVoted[msg.sender] = true;
+        emit Voted(msg.sender, _candidateId);
+    }
+
+    function getVotes(uint256 _candidateId) external view returns (uint256) {
+        require(_candidateId < candidateCount, "Invalid candidate");
+        return candidates[_candidateId].voteCount;
     }
 }
