@@ -25,19 +25,25 @@ contract InternshipCertificateNFT is ERC721, ERC721URIStorage {
     /**
      * @dev Mints a new certificate NFT to a `recipient`.
      *
+     * Requirements:
+     * - `_tokenURI` must be a valid link to the metadata JSON.
+     *
      * Returns the unique ID assigned to the new certificate.
      */
-    function mintNFT(address recipient, string memory tokenURI) public returns (uint256) {
+    function mintNFT(address recipient, string memory _tokenURI) public returns (uint256) {
         uint256 newItemId = _nextTokenId++;
 
         _safeMint(recipient, newItemId);
-        _setTokenURI(newItemId, tokenURI);
+        _setTokenURI(newItemId, _tokenURI);
 
         return newItemId;
     }
 
     /**
      * @dev Returns the Uniform Resource Identifier (URI) for `tokenId`.
+     *
+     * NOTE: This override is required because both {ERC721} and 
+     * {ERC721URIStorage} implement this function.
      */
     function tokenURI(uint256 tokenId)
         public
@@ -50,7 +56,7 @@ contract InternshipCertificateNFT is ERC721, ERC721URIStorage {
 
     /**
      * @dev Returns true if this contract implements the interface defined by
-     * `interfaceId`. Required for compatibility with NFT platforms.
+     * `interfaceId`. See {IERC165-supportsInterface}.
      */
     function supportsInterface(bytes4 interfaceId)
         public

@@ -26,13 +26,13 @@ contract AchievementBadgeNFT is ERC721, ERC721URIStorage {
      *
      * Requirements:
      * - `recipient` must be a valid non-zero address.
-     * - `tokenURI` must point to the badge's metadata.
+     * - `_uri` must point to the badge's metadata.
      */
-    function mintNFT(address recipient, string memory tokenURI) public returns (uint256) {
+    function mintNFT(address recipient, string memory _uri) public returns (uint256) {
         uint256 tokenId = _nextTokenId++;
 
         _safeMint(recipient, tokenId);
-        _setTokenURI(tokenId, tokenURI);
+        _setTokenURI(tokenId, _uri);
 
         return tokenId;
     }

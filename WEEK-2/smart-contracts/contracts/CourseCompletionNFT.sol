@@ -26,20 +26,27 @@ contract CourseCompletionNFT is ERC721, ERC721URIStorage {
      *
      * Requirements:
      * - `recipient` cannot be the zero address.
+     * - `_tokenURI` must be a valid metadata link.
      *
      * Returns the `tokenId` of the newly minted certificate.
      */
-    function mintNFT(address recipient, string memory tokenURI) public returns (uint256) {
+    function mintNFT(address recipient, string memory _tokenURI) public returns (uint256) {
         uint256 tokenId = _nextTokenId++;
 
         _safeMint(recipient, tokenId);
-        _setTokenURI(tokenId, tokenURI);
+        _setTokenURI(tokenId, _tokenURI);
 
         return tokenId;
     }
 
     /**
      * @dev See {IERC721Metadata-tokenURI}.
+     *
+     * Requirements:
+     * - `tokenId` must exist.
+     *
+     * NOTE: This override is required because both {ERC721} and 
+     * {ERC721URIStorage} implement this function.
      */
     function tokenURI(uint256 tokenId)
         public
@@ -52,6 +59,7 @@ contract CourseCompletionNFT is ERC721, ERC721URIStorage {
 
     /**
      * @dev Required override for interface detection.
+     * * See {IERC165-supportsInterface}.
      */
     function supportsInterface(bytes4 interfaceId)
         public
