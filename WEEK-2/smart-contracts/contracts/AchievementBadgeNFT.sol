@@ -1,28 +1,20 @@
 // SPDX-License-Identifier: MIT
-// OpenZeppelin Contracts (latest stable version)
+// OpenZeppelin Contracts (updated to v5.0 formatting)
 
 pragma solidity ^0.8.20;
 
 import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import {ERC721URIStorage} from "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import {Counters} from "@openzeppelin/contracts/utils/Counters.sol";
 
 /**
  * @dev Implementation of the {IERC721} interface for Achievement Badges.
  *
- * This contract allows for the issuance of non-fungible badges to recognize 
- * specific milestones or achievements. It leverages {ERC721URIStorage} to 
- * associate each unique badge with a distinct metadata profile (e.g., badge 
- * rarity, description, and image assets).
- *
- * Use of the {Counters} library ensures that token IDs are incremented 
- * safely and uniquely for every new badge issued.
+ * This version is optimized for OpenZeppelin v5.0+, removing the deprecated 
+ * Counters library in favor of native uint256 incrementing.
  */
 contract AchievementBadgeNFT is ERC721, ERC721URIStorage {
-    using Counters for Counters.Counter;
-
-    // @dev Tracks the unique identifier for the next badge to be issued.
-    Counters.Counter private _tokenIds;
+    // @dev Tracks the ID for the next badge to be issued.
+    uint256 private _nextTokenId;
 
     /**
      * @dev Initializes the contract by setting the collection name and symbol.
@@ -33,39 +25,26 @@ contract AchievementBadgeNFT is ERC721, ERC721URIStorage {
      * @dev Mints a new achievement badge to a specific `recipient`.
      *
      * Requirements:
-     *
      * - `recipient` must be a valid non-zero address.
-     * - `tokenURI` must point to the badge's metadata (JSON).
-     *
-     * Returns the unique `uint256` ID assigned to the new badge.
+     * - `tokenURI` must point to the badge's metadata.
      */
     function mintNFT(address recipient, string memory tokenURI) public returns (uint256) {
-        _tokenIds.increment();
+        uint256 tokenId = _nextTokenId++;
 
-        uint256 newItemId = _tokenIds.current();
-        _mint(recipient, newItemId);
-        _setTokenURI(newItemId, tokenURI);
+        _safeMint(recipient, tokenId);
+        _setTokenURI(tokenId, tokenURI);
 
-        return newItemId;
-    }
-
-    /**
-     * @dev Destroys the badge with `tokenId`.
-     *
-     * NOTE: This override is mandatory because both {ERC721} and 
-     * {ERC721URIStorage} define their own internal burn logic. Calling 
-     * `super` ensures the metadata is cleaned up alongside the token record.
-     */
-    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
-        super._burn(tokenId);
+        return tokenId;
     }
 
     /**
      * @dev Returns the metadata URI for a given `tokenId`.
      *
      * Requirements:
+     * - `tokenId` must exist.
      *
-     * - `tokenId` must have been minted and not burned.
+     * NOTE: This override is required because both {ERC721} and 
+     * {ERC721URIStorage} implement this function.
      */
     function tokenURI(uint256 tokenId)
         public
@@ -74,5 +53,18 @@ contract AchievementBadgeNFT is ERC721, ERC721URIStorage {
         returns (string memory)
     {
         return super.tokenURI(tokenId);
+    }
+
+    /**
+     * @dev Returns true if this contract implements the interface defined by
+     * `interfaceId`. See {IERC165-supportsInterface}.
+     */
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        override(ERC721, ERC721URIStorage)
+        returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
     }
 }
