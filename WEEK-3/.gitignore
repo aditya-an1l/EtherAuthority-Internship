@@ -1,0 +1,115 @@
+############################
+# Global / OS
+############################
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.log
+
+############################
+# Environment Variables / Secrets
+############################
+.env
+.env.*
+!.env.example
+
+############################
+# Node.js (Frontend + Backend + Hardhat)
+############################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+############################
+# React / Frontend
+############################
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.env.*
+
+############################
+# Backend (Express)
+############################
+backend/node_modules/
+backend/.env
+backend/.env.*
+
+############################
+# Hardhat / Blockchain
+############################
+contracts/node_modules/
+contracts/cache/
+contracts/artifacts/
+contracts/.env
+contracts/.env.*
+
+############################
+# Coverage & Reports
+############################
+coverage/
+*.lcov
+
+############################
+# Python / ML
+############################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+############################
+# Python Virtual Environments
+############################
+venv/
+.venv/
+env/
+ENV/
+
+############################
+# ML Artifacts / Data
+############################
+*.pkl
+*.joblib
+*.h5
+*.onnx
+data/
+datasets/
+ml/data/
+ml/output/
+ml/models/
+
+############################
+# Jupyter / Notebooks
+############################
+.ipynb_checkpoints/
+
+############################
+# Tkinter / Local UI State
+############################
+*.tk
+*.db
+*.sqlite
+
+############################
+# Build / Distribution
+############################
+dist/
+build/
+*.egg-info/
+
+############################
+# IDEs & Editors
+############################
+.vscode/
+.idea/
+*.iml
+
+############################
+# Temporary / Misc
+############################
+tmp/
+temp/
+.cache/
