@@ -1,0 +1,7 @@
+stake_amount,duration_days,gas_fee,yield_rate,market_volatility,loyalty_score,early_unstake
+1.5,30,45,5.2,0.12,8,0
+0.2,90,75,4.8,0.45,2,1
+5.0,7,12,6.1,0.05,10,0
+0.05,180,85,3.5,0.60,1,1
+2.2,60,30,5.5,0.20,5,0
+0.8,30,65,4.2,0.35,3,1
