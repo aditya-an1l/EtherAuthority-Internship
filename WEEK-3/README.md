@@ -56,7 +56,7 @@ This repository contains a complete implementation and supporting materials that
 
 5. **ML mini-experiment**
 
-   - Folder: `ml/` (scripts) and `ml-staking-tk/` (Tkinter desktop UI)
+   - Folder: `ml/` (scripts and GUI)
    - Implements synthetic data generation, Logistic Regression training, save/load model, and a Tkinter app that allows CSV upload, feature selection, training, visualization (scatter, confusion matrix, ROC), and single-instance prediction.
    - ML maps to the DApp by predicting **early unstake risk** (helps optimize rewards & UX).
 
@@ -70,7 +70,7 @@ This repository contains a complete implementation and supporting materials that
 
 - **Staking DApp (full code)**: root folders `contracts/`, `backend/`, `frontend/`
 - **Security report**: `SECURITY_REPORT.md`
-- **ML project**: `ml/` (training scripts) and `ml-staking-tk/` (Tkinter UI)
+- **ML project**: `ml/` (training scripts)
 - **This README**: `README.md` (root)
 
 ---
@@ -164,7 +164,7 @@ python train_model.py       # creates stake_model.pkl
 ### 5) ML Desktop App
 
 ```bash
-cd ml-staking-tk
+cd ml
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -178,4 +178,4 @@ python main.py
 - **Develop a staking smart contract** → `contracts/Staking.sol` tested with Hardhat. Deployed to Sepolia (address above).
 - **Integrate frontend, backend & blockchain** → `frontend/` (React + Ethers.js), `backend/` (Express + JWT + event listener) wired to the deployed contract. Example flows: Approve → Stake; backend indexes events into MongoDB.
 - **Security issue analysis** → `SECURITY_REPORT.md` contains threat model, findings & remediation (reentrancy, access control, reward pool exhaustion, JWT best practices, backend rate-limiting).
-- **ML mini-experiment** → `ml/` (train/predict scripts) + `ml-staking-tk/` (GUI). Demonstrates ML basics, integration strategy, and UX usage (early-unstake risk).
+- **ML mini-experiment** → `ml/` (train/predict scripts and GUI). Demonstrates ML basics, integration strategy, and UX usage (early-unstake risk).
