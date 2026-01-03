@@ -1,8 +1,11 @@
 # 🔐 Security Analysis Report
 
 **Project:** MERN-Based Staking DApp with Chainlink Integration
+
 **Domain:** DeFi, Smart Contract Security, Full-Stack Web3
+
 **Author:** Aditya Anil
+
 **Tech Stack:** Solidity, OpenZeppelin, Chainlink, MERN (MongoDB, Express, React, Node.js)
 
 ---
@@ -294,15 +297,4 @@ Users interacting with modified contract addresses.
 
 ## 12. Conclusion
 
-The staking DApp demonstrates strong adherence to modern DeFi security standards. Core vulnerabilities such as reentrancy, overflow, and unauthorized access are effectively mitigated using audited libraries and best practices. While minor improvements are recommended for production readiness, the current implementation is secure and well-architected for academic and testnet deployment.
-
----
-
-If you want next, I can:
-
-- Convert this into a **PDF / LaTeX format**
-- Add **screenshots + diagrams**
-- Map each security item explicitly to **OWASP Web3 Top 10**
-- Or prepare a **viva / evaluation explanation** for faculty
-
-Just tell me what you want next.
+The staking DApp demonstrates strong adherence to modern DeFi security standards. Core vulnerabilities such as reentrancy, overflow, and unauthorized access are effectively mitigated using audited libraries and best practices. While minor improvements are recommended for production readiness, the current implementation is secure and well-architected for academic and testnet deployment
